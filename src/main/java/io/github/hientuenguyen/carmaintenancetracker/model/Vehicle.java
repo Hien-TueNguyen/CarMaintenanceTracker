@@ -30,7 +30,7 @@ public class Vehicle {
 
     //Getters and setters
     public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    /*Remove*/public void setId(Long id) { this.id = id; }
 
     public int getYear() { return year; }
     public void setYear(int year) { this.year = year; }
@@ -50,7 +50,7 @@ public class Vehicle {
     public String getMake() { return make; }
     public void setMake(String make) { this.make = make; }
 
-    private String displayVehicle(int year, String make, String model, int mileage, String vin) {
-        return year + " " + make + " " + model + " " + mileage + " " + vin;
+    private String displayVehicle() {
+        return year + " " + make + " " + model + " | " + currMileage + " miles | " + vin;
     }
 }

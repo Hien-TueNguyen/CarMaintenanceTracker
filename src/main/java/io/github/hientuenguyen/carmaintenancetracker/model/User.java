@@ -14,11 +14,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false, unique = true)
+    /*@Email later*/@Column(nullable = false, unique = true)
     private String email;
 
     @OneToMany(
@@ -43,7 +43,18 @@ public class User {
     public void setUsername(String username) { this.username = username; }
 
     public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    /* Remove */ public void setId(Long id) { this.id = id; }
+
+    //Helper methods
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
+        vehicle.setOwner(this);
+    }
+
+    public void removeVehicle(Vehicle vehicle) {
+        vehicles.remove(vehicle);
+        vehicle.setOwner(null);
+    }
 
     public User() {
 
