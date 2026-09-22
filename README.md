@@ -1,66 +1,80 @@
 # Car Maintenance Tracker
 
-A full-stack web application that helps users track their vehicles, mileage, maintenance history, service intervals, and modifications in one place.
+A full-stack web application for tracking vehicle information, mileage, maintenance history, service intervals, and modifications.
 
-Built to simplify vehicle maintenance management while demonstrating full-stack development with Java, Spring Boot, SQL, and modern web technologies.
+Built with Java and Spring Boot as a personal project to develop experience with full-stack web development, databases, testing, and software engineering practices.
 
 ## Features
 
-* Manage multiple vehicles per user
-* Track vehicle information, mileage, and VIN
+### Current
+
+* Add and manage vehicles
+* Store vehicle year, make, model, mileage, and VIN
 * Validate vehicle data before storage
-* Record maintenance and service history *(planned)*
-* Track maintenance intervals and upcoming services *(planned)*
-* Track vehicle modifications and parts *(planned)*
-* User authentication and personalized dashboards *(planned)*
+* Associate vehicles with individual users
+
+### Planned
+
+* Maintenance and service history
+* Maintenance intervals and upcoming service reminders
+* Vehicle modifications and parts tracking
+* User authentication and authorization
+* Personalized vehicle dashboards
 
 ## Tech Stack
 
 **Backend:** Java 21, Spring Boot, Spring Data JPA, Hibernate
-**Database:** H2, PostgreSQL
+**Database:** H2, PostgreSQL *(planned)*
 **Frontend:** HTML, CSS, JavaScript, Thymeleaf
-**Tools:** Maven, Git, GitHub, IntelliJ IDEA
+**Tools:** Maven, Git, GitHub, IntelliJ IDEA/VSCode
 
-## Installation
+## Architecture
 
-**Prerequisites:** Java 21, Git, and Maven
-
-```bash
-git clone https://github.com/Hien-TueNguyen/CarMaintenanceTracker.git
-cd CarMaintenanceTracker
-mvn clean install
-mvn spring-boot:run
-```
-
-The application runs by default at `localhost:8080`.
-
-## Usage
-
-Users can add vehicles to their account and manage information for each vehicle.
-
-```text
-1997 Mazda Miata
-├── Mileage: 152,000
-├── Maintenance History
-├── Service Intervals
-└── Modifications
-```
-
-The application follows a standard layered Spring Boot architecture:
+The application uses a layered Spring Boot architecture:
 
 ```text
 Client → Controller → Service → Repository → Database
 ```
 
-## Contributing
+Users can own multiple vehicles, with vehicle data and business logic managed through the service and repository layers.
 
-Contributions, bug reports, and feature suggestions are welcome. Fork the repository, create a feature branch, and submit a pull request.
+## Getting Started
 
-## License
+### Prerequisites
 
-No license has been added yet.
+* Java 21
+* Git
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Hien-TueNguyen/CarMaintenanceTracker.git
+cd CarMaintenanceTracker
+```
+
+Run the application:
+
+```bash
+./mvnw spring-boot:run
+```
+
+The application runs at `http://localhost:8080`.
+
+## Roadmap
+
+* [x] Vehicle entity and persistence
+* [x] Vehicle validation
+* [x] User-to-vehicle relationship
+* [ ] Vehicle management UI
+* [ ] Maintenance records
+* [ ] Service interval tracking
+* [ ] Modifications and parts
+* [ ] User authentication and authorization
+* [ ] PostgreSQL integration
+* [ ] Automated testing
+* [ ] CI/CD
+* [ ] Production deployment
 
 ## Project Status
 
-**In Development** — Maintenance tracking, authentication, PostgreSQL integration, and the frontend dashboard are currently being developed.
-
+**In development.** The current focus is building the core vehicle management functionality before expanding into maintenance tracking and user-facing features.
